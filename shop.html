@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="animate.css" />
+    <script src="wow.min.js"></script>
+
+    <!-- external stylesheet -->
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- icon pack -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!-- tweenmax (greensock) cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+    <title>Orinoco - online vintage cameras shop</title>
+  </head>
+
+  <body>
+    <div class="my-container">
+      <!-- NAVIGATION STARTS -->
+
+      <div class="nav">
+        <div class="menu-open">
+          <ion-icon name="menu"></ion-icon>
+        </div>
+        <div class="brand">
+          <span><a href="index.html">orinoco</a></span>
+        </div>
+        <div class="cart">
+          <a href="cart.html"><ion-icon name="cart"></ion-icon></a>
+        </div>
+        <div class="menu">
+          <div class="menu-close">
+            <ion-icon name="close"></ion-icon>
+          </div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">collection</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="about.html">Our story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="media-menu">
+            <ul>
+              <li><ion-icon name="logo-facebook"></ion-icon></li>
+              <li><ion-icon name="logo-instagram"></ion-icon></li>
+              <li><ion-icon name="logo-twitter"></ion-icon></li>
+              <li><ion-icon name="logo-pinterest"></ion-icon></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- NAVIGATION ENDS -->
+
+      <div class="whitespaces"></div>
+
+      <!-- COLLECTION STARTS -->
+
+      <div class="collection">
+        <p id="heading">Our products</p>
+
+        <div class="section prod-list">
+          <div class="container-fluid">
+            <div class="row some-cards" id="prodList">
+              <!-- Products added from items collection in main.js file -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLLECTION ENDS -->
+
+      <!-- FOOTER STARTS -->
+
+      <div class="container-fluid footer">
+        <div class="section container">
+          <footer>
+            <div class="row">
+              <div class="col-lg-3 block">
+                <p>
+                  Wordoutlet, 3581 Lunneta Street,
+                  <br />
+                  Siesta Key, Florida. 20002,
+                  <br />
+                  USA
+                </p>
+              </div>
+              <div class="col-lg-3 block">
+                <p>
+                  FAQs
+                  <br />
+                  Return Policy
+                  <br />
+                  Shipping
+                </p>
+              </div>
+              <div class="col-lg-3 block">
+                <p>
+                  Careers
+                  <br />
+                  Community
+                  <br />
+                  Wholesale
+                </p>
+              </div>
+              <div class="col-lg-3 block">
+                <div class="media">
+                  <ul>
+                    <li>
+                      <ion-icon name="logo-facebook"></ion-icon>
+                    </li>
+                    <li>
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </li>
+                    <li>
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </li>
+                    <li>
+                      <ion-icon name="logo-pinterest"></ion-icon>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+      <!-- FOOTER ENDS -->
+    </div>
+
+    <!-- Optional JavaScript -->
+
+    <script type="text/javascript">
+      //Scroll reveal animations
+
+      new WOW().init();
+
+      //Scroll activated background change
+      $(function () {
+        $(document).scroll(function () {
+          var $nav = $(".nav");
+          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+        });
+      });
+
+      //Toggle MENU
+
+      var t1 = new TimelineMax({ paused: true });
+      t1.to(".menu", 0.5, {
+        left: "0%",
+        ease: Power2.easeInOut,
+      });
+
+      t1.reverse();
+      $(document).on("click", ".menu-open", function () {
+        t1.reversed(!t1.reversed());
+      });
+      $(document).on("click", ".menu-close", function () {
+        t1.reversed(!t1.reversed());
+      });
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

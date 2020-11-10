@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="animate.css">
+    <script src="wow.min.js"></script>
+
+    <!-- external stylesheet -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- icon pack -->
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!-- tweenmax (greensock) cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+    <title>Orinoco - online vintage cameras shop</title>
+
+</head>
+
+<body>
+
+    <div class="my-container">
+
+        <!-- NAVIGATION STARTS -->
+
+        <div class="nav">
+            <div class="menu-open">
+                <ion-icon name="menu"></ion-icon>
+            </div>
+            <div class="brand">
+                <span><a href="index.html">orinoco</a></span>
+            </div>
+            <div class="cart">
+                <ion-icon name="cart"></ion-icon>
+            </div>
+            <div class="menu">
+                <div class="menu-close">
+                    <ion-icon name="close"></ion-icon>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Collection</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="media-menu">
+                    <ul>
+                        <li>
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </li>
+                        <li>
+                            <ion-icon name="logo-pinterest"></ion-icon>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION ENDS -->
+
+        <div class="shopping-cart">
+            <div class="px-4 px-lg-0">
+
+                <div class="pb-5">
+                    <div class="container">
+                        <div class="row product-sec">
+                            <div class="col-lg-8 p-5 bg-white rounded shadow-sm mb-5">
+
+                                <!-- Shopping cart table -->
+                                <div class="table-responsive ">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="p-2 px-3 text-uppercase">Product</div>
+                                                </th>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="py-2 text-uppercase">Price</div>
+                                                </th>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="py-2 text-uppercase">Quantity</div>
+                                                </th>
+                                                <th scope="col" class="border-0 bg-light">
+                                                    <div class="py-2 text-uppercase">Remove</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" class="border-0">
+                                                    <div class="p-2">
+                                                        <img src="./images/vcam_2.jpg" alt="" style="width: 70px;"
+                                                            class="img-fluid rounded shadow-sm">
+                                                        <div class="ml-3 d-inline-block align-middle">
+                                                            <h5 class="mb-0"> <a href="#"
+                                                                    class="text-dark d-inline-block align-middle">Camear</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td class="border-0 align-middle"><strong>$0.00</strong></td>
+                                                <td class="border-0 align-middle"><strong>1</strong></td>
+                                                <td class="border-0 align-middle"><a href="#" class="text-dark">
+                                                        <ion-icon name="trash"></ion-icon>
+                                                    </a></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <div class="p-2">
+                                                        <img src="./images/vcam_3.jpg" alt="" style="width: 70px;"
+                                                            class="img-fluid rounded shadow-sm">
+                                                        <div class="ml-3 d-inline-block align-middle">
+                                                            <h5 class="mb-0"><a href="#"
+                                                                    class="text-dark d-inline-block">Camera v1</a></h5>
+                                                        </div>
+                                                    </div>
+                                                </th>
+                                                <td class="align-middle"><strong>$0.00</strong></td>
+                                                <td class="align-middle"><strong>1</strong></td>
+                                                <td class="align-middle"><a href="#" class="text-dark">
+                                                        <ion-icon name="trash"></ion-icon>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">
+                                                    <div class="p-2">
+                                                        <img src="./images/vcam_1.jpg" alt="" style="width: 70px;"
+                                                            class="img-fluid rounded shadow-sm">
+                                                        <div class="ml-3 d-inline-block align-middle">
+                                                            <h5 class="mb-0"> <a href="#"
+                                                                    class="text-dark d-inline-block">Camera v1</a></h5>
+                                                        </div>
+                                                    </div>
+
+                                                <td class="align-middle"><strong>$0.00</strong></td>
+                                                <td class="align-middle"><strong>1</strong></td>
+                                                <td class="align-middle"><a href="#" class="text-dark">
+                                                        <ion-icon name="trash"></ion-icon>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- End -->
+                            </div>
+                            <div class="col-lg-4 p-5 bg-white rounded shadow-sm mb-5">
+                                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order
+                                    summary </div>
+                                <div class="p-4">
+                                    <p class="font-italic mb-4">Shipping and additional costs are calculated based on
+                                        values you have entered.</p>
+                                    <ul class="list-unstyled mb-4">
+                                        <li class="d-flex justify-content-between py-3 border-bottom">
+                                            <strong class="text-muted">Total</strong>
+                                            <h5 class="font-weight-bold">$0.00</h5>
+                                        </li>
+                                    </ul><a href="checkout.html" class="btn btn-dark rounded-pill btn-block"
+                                        id="move-next">Procceed to
+                                        checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER STARTS -->
+
+    <div class="container-fluid footer">
+        <div class="section container">
+            <footer>
+                <div class="row">
+                    <div class="col-lg-3 block">
+                        <p>Oxford Street 123, C12E123
+                            <br>
+                            London, Grater London
+                            <br>
+                            UK</p>
+                    </div>
+                    <div class="col-lg-3 block">
+                        <p>FAQs
+                            <br>
+                            Return Policy
+                            <br>
+                            Shipping</p>
+                    </div>
+                    <div class="col-lg-3 block">
+                        <p>Careers
+                            <br>
+                            Community
+                            <br>
+                            Wholesale</p>
+                    </div>
+                    <div class="col-lg-3 block">
+                        <div class="media">
+                            <ul>
+                                <li>
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </li>
+                                <li>
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </li>
+                                <li>
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </li>
+                                <li>
+                                    <ion-icon name="logo-pinterest"></ion-icon>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- FOOTER ENDS -->
+
+
+    <!-- Optional JavaScript -->
+    <script type="text/javascript">
+
+        //Scroll reveal animations
+
+        new WOW().init();
+
+        //Scroll activated background change
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $(".nav");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+            });
+        });
+
+        //Toggle MENU
+
+        var t1 = new TimelineMax({ paused: true });
+        t1.to(".menu", 0.5, {
+            left: "0%",
+            ease: Power2.easeInOut
+        });
+
+        t1.reverse();
+        $(document).on("click", ".menu-open", function () {
+            t1.reversed(!t1.reversed());
+        });
+        $(document).on("click", ".menu-close", function () {
+            t1.reversed(!t1.reversed());
+        });
+
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    </div>
+
+
+</body>
+
+</html>
