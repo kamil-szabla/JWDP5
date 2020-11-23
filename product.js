@@ -3,6 +3,7 @@ const select = document.getElementById("lenseSelect");
 const addBtn = document.getElementById("addProd");
 const prodName = document.getElementById("prod-name");
 const price = document.getElementById("price");
+let cart = [];
 
 makeRequest = () => {
   return new Promise((resolve, reject) => {
@@ -19,7 +20,7 @@ makeRequest = () => {
         if (apiRequest.status === 200) {
           resolve(JSON.parse(apiRequest.response));
         } else {
-          reject("Somehting went wrong - API Request failed!");
+          reject(alert("Somehting went wrong - API Request failed!"));
         }
       }
     };
@@ -41,12 +42,16 @@ function showProduct(response) {
   }
 }
 
-addBtn.addEventListener("click", ($event) => {
-  $event.preventDefault();
-  localStorage.setItem("Name", prodName.textContent);
-  localStorage.setItem("Price", price.textContent);
-  localStorage.setItem("Lense", select.value);
+// Add product to the local storage
+addBtn.addEventListener("click", () => {
+  let prodContent = prodName.textContent;
+  let priceContent = price.textContent;
+  let selectValue = select.value;
+
   console.log(localStorage);
+
+  cart.push({ prodContent, priceContent, selectValue });
+  localStorage.setItem("cart", JSON.stringify(cart));
 });
 
 init = async () => {
