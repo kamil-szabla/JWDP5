@@ -3,7 +3,6 @@ const select = document.getElementById("lenseSelect");
 const addBtn = document.getElementById("addProd");
 const prodName = document.getElementById("prod-name");
 const price = document.getElementById("price");
-let cart = [];
 
 makeRequest = () => {
   return new Promise((resolve, reject) => {
@@ -30,7 +29,7 @@ makeRequest = () => {
 function showProduct(response) {
   img.setAttribute("src", response.imageUrl);
 
-  //  Append right side section (details, etc....)
+  //  Append right side section (details, price and lense options)
   document.getElementById("description").textContent = response.description;
   prodName.textContent = response.name;
   price.textContent = response.price / 100 + "$";
@@ -43,14 +42,22 @@ function showProduct(response) {
 }
 
 // Add product to the local storage
-addBtn.addEventListener("click", () => {
+addBtn.addEventListener("click", (response) => {
   let prodContent = prodName.textContent;
   let priceContent = price.textContent;
   let selectValue = select.value;
+  let itemImage = img.src;
 
-  console.log(localStorage);
+  const localStorageContent = localStorage.getItem("cart");
 
-  cart.push({ prodContent, priceContent, selectValue });
+  let cart;
+  if (localStorageContent === null) {
+    cart = [];
+  } else {
+    cart = JSON.parse(localStorageContent);
+  }
+
+  cart.push({ prodContent, priceContent, selectValue, itemImage });
   localStorage.setItem("cart", JSON.stringify(cart));
 });
 
