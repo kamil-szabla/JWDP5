@@ -10,6 +10,7 @@ let city = document.getElementById("city");
 let email = document.getElementById("email");
 
 cartContent = JSON.parse(localStorageContent);
+let products = new Array();
 
 // Create cart content based on previous selection
 function tableItems() {
@@ -65,7 +66,11 @@ function tableItems() {
       newCart = JSON.stringify(cartContent);
       localStorage.setItem("cart", newCart);
     });
+
+    // Create array of products for POST request
+    products.push(cartContent[i].prodId);
   }
+  return products;
 }
 
 // Calculate total value of order
@@ -80,6 +85,7 @@ function orderSummary() {
   totalPrice.textContent = totalCost + " $";
 }
 
+// Form submit with validation
 (function sumbitForm() {
   "use strict";
 
@@ -94,6 +100,7 @@ function orderSummary() {
         form.addEventListener(
           "submit",
           function (event) {
+            // prevent default behaviour just for develop purpose
             event.preventDefault();
 
             if (cartContent < 1) {
@@ -106,27 +113,34 @@ function orderSummary() {
             }
             form.classList.add("was-validated");
 
-            let formInput = document.getElementById("myForm");
-            let formData = new FormData(formInput);
-            formData.append("firstName", fName.value);
-            formData.append("lastName", lName.value);
-            formData.append("address", address.value);
-            formData.append("city", city.value);
-            formData.append("email", email.value);
+            // let formInput = document.getElementById("myForm");
+            // let formData = new FormData(formInput);
+            // formData.append("firstName", fName.value);
+            // formData.append("lastName", lName.value);
+            // formData.append("address", address.value);
+            // formData.append("city", city.value);
+            // formData.append("email", email.value);
 
-            let contact = {
+            let contact = new Object();
+            let orderId = "";
+
+            contact = {
               firstName: fName.value,
               lastName: lName.value,
               address: address.value,
               city: city.value,
               email: email.value,
             };
+            let allInfo = {
+              contact: contact,
+              products: products,
+              orderId,
+            };
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/order", true);
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:3000/api/cameras/order", true);
             xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(contact);
-            console.log(contact);
+            xhr.send(JSON.stringify(allInfo));
           },
           false
         );

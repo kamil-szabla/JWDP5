@@ -28,6 +28,7 @@ makeRequest = () => {
 
 function showProduct(response) {
   img.setAttribute("src", response.imageUrl);
+  img.setAttribute("id", response._id);
 
   //  Append right side section (details, price and lense options)
   document.getElementById("description").textContent = response.description;
@@ -42,11 +43,12 @@ function showProduct(response) {
 }
 
 // Add product to the local storage
-addBtn.addEventListener("click", () => {
+addBtn.addEventListener("click", (response) => {
   let prodContent = prodName.textContent;
   let priceContent = price.textContent;
   let selectValue = select.value;
   let itemImage = img.src;
+  let prodId = img.id;
 
   const localStorageContent = localStorage.getItem("cart");
 
@@ -57,7 +59,7 @@ addBtn.addEventListener("click", () => {
     cart = JSON.parse(localStorageContent);
   }
 
-  cart.push({ prodContent, priceContent, selectValue, itemImage });
+  cart.push({ prodContent, priceContent, selectValue, itemImage, prodId });
   localStorage.setItem("cart", JSON.stringify(cart));
 });
 
