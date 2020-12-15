@@ -42,7 +42,7 @@ function showProduct(response) {
 }
 
 // Add product to the local storage
-addBtn.addEventListener("click", (response) => {
+addBtn.addEventListener("click", () => {
   let prodContent = prodName.textContent;
   let priceContent = price.textContent;
   let selectValue = select.value;
