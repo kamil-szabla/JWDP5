@@ -1,10 +1,13 @@
+// SELECTORS
 const showPrice = document.getElementById("totalPrice");
 const orderId = document.getElementById("orderId");
 const backBtn = document.getElementById("backBtn");
 
+let order = sessionStorage.getItem("orderId");
 const localStorageContent = localStorage.getItem("cart");
 cartContent = JSON.parse(localStorageContent);
 
+// Shows total cost of order and order ID
 function orderSummary() {
   let totalCost = 0;
   for (let i = 0; i < cartContent.length; i++) {
@@ -14,15 +17,7 @@ function orderSummary() {
     totalCost = totalCost + newPrice;
   }
   showPrice.textContent = "Total cost of your order: " + totalCost + " $";
-}
-
-function idGenerate() {
-  let newRandom = (
-    Date.now().toString(36) + Math.random().toString(36).substr(2, 5)
-  ).toUpperCase();
-
-  orderId.textContent = "Your order ID: " + newRandom;
-  console.log(newRandom);
+  orderId.textContent = "Your order ID: " + order;
 }
 
 backBtn.addEventListener("click", () => {
@@ -30,4 +25,3 @@ backBtn.addEventListener("click", () => {
 });
 
 orderSummary();
-idGenerate();

@@ -1,9 +1,11 @@
+// SELECTORS
 const addBtn = document.getElementById("add-product");
 const submitBtn = document.getElementById("sumbit");
 const cards = document.getElementById("prodList");
 const select = document.getElementsByClassName("prodLink");
 const prod = document.querySelectorAll("prod");
 
+// REQUEST TO PULL DATA FROM API
 makeRequest = () => {
   return new Promise((resolve, reject) => {
     let apiRequest = new XMLHttpRequest();
@@ -22,6 +24,7 @@ makeRequest = () => {
   });
 };
 
+// FUNCTION CREATES PRODUCTS ON THE WEBSITE, TAKES DATA FROM 'GET' REQUEST ABOVE
 addProduct = (response) => {
   for (let i in response) {
     const newDiv = document.createElement("div");
@@ -42,6 +45,7 @@ addProduct = (response) => {
   }
 };
 
+// ASYNC FUNCTION WAITS FOR THE REQUEST RESPONSE, THEN PASS IT TO addProduct() FUNCTION
 init = async () => {
   try {
     const requestPromise = makeRequest();

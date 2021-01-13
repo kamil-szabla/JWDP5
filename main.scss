@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap");
-
 html,
 body {
   margin: 0;
@@ -160,6 +159,9 @@ a {
 img {
   width: 100%;
 }
+.prod-image {
+  margin-top: 50px;
+}
 #prod-img {
   // overflow: auto;
   // position: absolute;
@@ -167,7 +169,7 @@ img {
   // top: 6%;
   // margin-left: 50px;
   // margin-right: 50px;
-  margin: 30px auto 20px;
+  margin-top: 50px;
   display: block;
 }
 
@@ -194,11 +196,12 @@ ion-icon {
 .media ul {
   list-style: none;
   font-size: 20px;
+  margin: 0 28px;
 }
 
 .media ul li {
-  display: inline-block;
-  margin-right: 20px;
+  display: contents;
+  // margin-right: 20px;
 }
 
 @media (max-width: 991px) {
@@ -210,10 +213,15 @@ ion-icon {
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
+    ul {
+      font-size: 8px;
+      margin-left: -15px;
+    }
   }
 
-  .media ul {
-    margin-right: 0;
+  .media ul li {
+    display: contents;
+    margin: 0 15px;
   }
 }
 
@@ -289,7 +297,7 @@ ion-icon {
 }
 
 .block {
-  margin-top: 40px;
+  // margin-top: 40px;
   font-size: 20px;
 }
 
@@ -352,6 +360,7 @@ footer p {
 
 #rightSide {
   height: 700px;
+  margin-top: -135px;
 }
 
 .prod-opt {
@@ -506,4 +515,15 @@ form input:focus,
 textarea:focus {
   outline: none !important;
   border: 2px solid #000 !important;
+}
+
+// Table
+@media (max-width: 900px) {
+  #lenseOpt,
+  .lenseOpt {
+    display: none;
+  }
+  table {
+    font-size: 0.8em;
+  }
 }
