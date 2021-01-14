@@ -113,6 +113,7 @@ function sumbitForm() {
               event.preventDefault();
               event.stopPropagation();
               alert("Your cart is empty");
+              return 0;
             } else if (form.checkValidity() === false) {
               event.preventDefault();
               event.stopPropagation();

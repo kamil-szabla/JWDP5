@@ -4,6 +4,7 @@ const select = document.getElementById("lenseSelect");
 const addBtn = document.getElementById("addProd");
 const prodName = document.getElementById("prod-name");
 const price = document.getElementById("price");
+const alert = document.getElementById("alert");
 
 // GET REQUEST TAKES ID OF ITEM FROM URL TO GET ALL THE INFO ABOUT THE ITEM
 makeRequest = () => {
