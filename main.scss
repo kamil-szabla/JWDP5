@@ -331,38 +331,6 @@ input {
   color: rgba(0, 0, 0, 0.6);
 }
 
-#blockquote {
-  font-style: italic;
-  font-size: 24px;
-  padding: 30px 20px;
-  margin: 20px 0;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* CONTACT */
-
-form label,
-textarea {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.form-control {
-  box-shadow: none !important;
-}
-
-form input,
-textarea {
-  border-radius: 0% !important;
-}
-
-form input:focus,
-textarea:focus {
-  outline: none !important;
-  border: 2px solid #000 !important;
-}
-
 // Table
 @media (max-width: 900px) {
   #lenseOpt,
@@ -371,5 +339,23 @@ textarea:focus {
   }
   table {
     font-size: 0.8em;
+  }
+}
+
+.checkout {
+  padding: 100px;
+  height: 70vh;
+}
+@media (max-width: 800px) {
+  .checkout {
+    padding: 60px;
+    height: 65vh;
+    font-size: 1em;
+    .card-title {
+      font-size: 1em;
+    }
+    #backBtn {
+      font-size: 0.9em;
+    }
   }
 }
