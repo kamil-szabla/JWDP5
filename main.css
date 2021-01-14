@@ -294,6 +294,10 @@ footer p {
   margin-top: -135px;
 }
 
+#leftSide {
+  margin-bottom: 50px;
+}
+
 .prod-opt {
   position: absolute;
   width: 60%;
