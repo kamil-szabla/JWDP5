@@ -57,6 +57,7 @@ addBtn.addEventListener("click", (response) => {
   const localStorageContent = localStorage.getItem("cart");
 
   let cart;
+  let data;
   if (localStorageContent === null) {
     cart = [];
   } else {

@@ -108,6 +108,7 @@ function sumbitForm() {
         form.addEventListener(
           "submit",
           function (event) {
+            event.preventDefault();
             if (cartContent < 1) {
               event.preventDefault();
               event.stopPropagation();
@@ -133,9 +134,9 @@ function sumbitForm() {
               contact: contact,
               products: products,
             };
-
+            let orderId = "";
             // POST request with customer informations and cart content
-            makeRequest = () => {
+            (function makeRequest() {
               return new Promise((resolve, reject) => {
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "http://localhost:3000/api/cameras/order");
@@ -146,8 +147,9 @@ function sumbitForm() {
                     if (xhr.status === 201) {
                       resolve(JSON.parse(xhr.response));
                       let parsedResponse = JSON.parse(xhr.response);
-                      let orderId = parsedResponse.orderId;
-                      sessionStorage.setItem("orderId", orderId);
+                      orderId = parsedResponse.orderId;
+                      sessionStorage.setItem("data", orderId);
+                      location.replace("checkout.html");
                     } else {
                       reject(
                         console.log("Something went wrong, please try again.")
@@ -156,8 +158,7 @@ function sumbitForm() {
                   }
                 };
               });
-            };
-            makeRequest();
+            })();
           },
           false
         );

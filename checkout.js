@@ -3,7 +3,7 @@ const showPrice = document.getElementById("totalPrice");
 const orderId = document.getElementById("orderId");
 const backBtn = document.getElementById("backBtn");
 
-let order = sessionStorage.getItem("orderId");
+let order = sessionStorage.getItem("data");
 const localStorageContent = localStorage.getItem("cart");
 cartContent = JSON.parse(localStorageContent);
 
@@ -21,6 +21,7 @@ function orderSummary() {
 }
 
 backBtn.addEventListener("click", () => {
+  sessionStorage.removeItem("data");
   localStorage.removeItem("cart");
 });
 
